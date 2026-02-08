@@ -251,7 +251,7 @@ Create a ZIP file containing:
 ## Dependencies
 - **Pygame** (open source) - game framework
 - **PyInstaller** (open source) - executable builder
-- **toml** (open source) - configuration file parsing
+- **tomllib** (open source) - configuration file parsing (Already in python)
 - **Google Fonts** (open source) - Quicksand and Nunito fonts
 
 ## Success Criteria
@@ -345,3 +345,9 @@ Create a ZIP file containing:
 ---
 
 **Note**: This plan is optimized for a coding agent to implement without ambiguity. All timings, colors, sizes, and behaviors are explicitly specified.
+
+
+
+# EDIT
+* Show an emoji if one exists for the word, big above the word.
+* Remove the shaking. Make the word grow much bigger, and make it happen quicker. Reduce next word delay.

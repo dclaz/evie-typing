@@ -114,7 +114,7 @@ def main():
     slide_duration = 800
     slide_direction = None
     pause_start = 0
-    pause_duration = 2000
+    pause_duration = 500
     word_complete = False
 
     clock = pygame.time.Clock()
@@ -197,9 +197,28 @@ def main():
                 elif slide_direction == 'right':
                     slide_x = dist
             else:
-                # Pause before next word
+                # Pause before next word - keep word off-screen
+                dist = int(1.5 * (screen_height if slide_direction in ['up','down'] else screen_width))
+                if slide_direction == 'up':
+                    slide_y = -dist
+                elif slide_direction == 'down':
+                    slide_y = dist
+                elif slide_direction == 'left':
+                    slide_x = -dist
+                elif slide_direction == 'right':
+                    slide_x = dist
+                
                 if now - pause_start > pause_duration:
-                    current_word_idx = (current_word_idx + 1) % len(words)
+                    prev_idx = current_word_idx
+                    # Pick a new word index different from previous
+                    if len(words) > 1:
+                        while True:
+                            next_idx = random.randint(0, len(words)-1)
+                            if next_idx != prev_idx:
+                                break
+                        current_word_idx = next_idx
+                    else:
+                        current_word_idx = (current_word_idx + 1) % len(words)
                     typed_letters = ''
                     wrong_letter = ''
                     word_complete = False
