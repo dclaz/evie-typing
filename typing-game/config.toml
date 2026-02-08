@@ -1,0 +1,23 @@
+[display]
+anti_aliasing = false
+fullscreen = true
+
+[gameplay]
+force_case = "upper"
+
+[colors]
+background = "#F5E6FF"
+target_letter = "#FF1493"
+typed_letter = "#00CED1"
+remaining_letter = "#B0B0B0"
+incorrect_letter = "#FF6B6B"
+wpm_text = "#9370DB"
+
+[font]
+family = "Quicksand-Bold"
+
+[audio]
+sound_enabled = true
+
+[effects]
+confetti_enabled = true
